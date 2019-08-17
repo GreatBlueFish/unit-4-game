@@ -6,106 +6,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
-    <title>Crystal Collector Game</title>
+    <title>Dragon Ball Z Game!</title>
 </head>
 
 <body>
 
-    <div class="container">
+    <body style="background-image:url('assets/images/dbz.jpg');">
+
         <div class="container">
-            <h1><strong>Crystal Collector</strong></h1>
-        </div>
+            <div class="container">
+                <h1><strong>Dragon Ball Collector</strong></h1>
+            </div>
 
-        <div class="row">
-            <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-12">
 
-                <div class="panel panel-default">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">Instructions</h3>
+                        </div>
+                        <div class="panel-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Target Score -->
+                <div class="col-lg-3">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-center">Instructions</h3>
+                        <h3 class="panel-title text-center">Target Score</h3>
                     </div>
                     <div class="panel-body">
-
+                        <h3 class="text-center" id="targetScore"></h3>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-
-            <!-- Target Score -->
+            <!-- Your Score -->
             <div class="col-lg-3">
-                <div class="panel-heading">
-                    <h3 class="panel-title text-center">Target Score</h3>
-                </div>
-                <div class="panel-body">
-                    <h3 class="text-center"><strong>78</strong></h3>
-                </div>
-            </div>
-        </div>
-
-        <!-- Your Score -->
-        <div class="col-lg-3">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title text-center">Your Score</h3>
-                </div>
-                <div class="panel-body">
-                    <h3 class="text-center"><strong>24</strong></h3>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">Your Score</h3>
+                    </div>
+                    <div class="panel-body">
+                        <h3 class="text-center" id="yourScore"></h3>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Crystals -->
-        <div class="col-lg-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title text-center">Crystal Collection</h3>
-                </div>
-                <div class="panel-body text-center">
-                    <img src="assets/images/blue_crystal.png" alt="" id="blue">
-                    <img src="assets/images/green_crystal.png" alt="" id="green">
-                    <img src="assets/images/red_crystal.png" alt="" id="red">
-                    <img src="assets/images/yellow_crystal.png" alt="" id="yellow">
-                </div>
-            </div>
-        </div>
-
-        <!-- Counters Row -->
-        <div class="row">
+            <!-- Crystals -->
             <div class="col-lg-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-center">Win Count</h3>
+                        <h3 class="panel-title text-center">Dragon Ball Selection</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <img src="assets/images/blue.png" alt="" id="blue">
+                        <img src="assets/images/green.png" alt="" id="green">
+                        <img src="assets/images/pink.png" alt="" id="pink">
+                        <img src="assets/images/yellow.png" alt="" id="yellow">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Counters Row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">Win Count</h3>
+                        </div>
+                        <div class="panel-body">
+                            <h3 class="text-center" id="winCount">0</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">Loss Count</h3>
                     </div>
                     <div class="panel-body">
-                        <h3 class="text-center"><strong>0</strong></h3>
+                        <h3 class="text-center" id="lossCount">0</h3>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <div class="col-lg-6">
-
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title text-center">Loss Count</h3>
-                </div>
-                <div class="panel-body">
-                    <h3 class="text-center"><strong>0</strong></h3>
-                </div>
+        <footer>
+            <div class="container">
+                &copy; Copyright 2019 Alexander Janumov
             </div>
-        </div>
+        </footer>
 
-    </div>
+        <iframe src="assets/audio/dbz.mp3" allow="autoplay">
+        </iframe>
 
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" src="assets/game.js"></script>
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" src="assets/game.js"></script>
 
-    <!--- Main Game JS -->
-    <script type="text/javascript" src="assets/game.js"></script>
+        <!--- Main Game JS -->
+        <script type="text/javascript" src="assets/game.js"></script>
 
 
-</body>
+    </body>
 
 </html>

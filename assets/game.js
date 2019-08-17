@@ -12,10 +12,10 @@ var crystal = {
         name: "Green",
         value: 0
     },
-    red: {
-        name: "Red",
+    pink: {
+        name: "pink",
         value: 0
-    }
+    },
     yellow: {
         name: "Yellow",
         value: 0
@@ -24,7 +24,7 @@ var crystal = {
 
 // Scores (Current and Target)
 var currentScore = 0;
-Var targetScore = 0;
+var targetScore = 0;
 
 // Wins and Losses
 var winCount = 0;
@@ -34,14 +34,16 @@ var lossCount = 0;
 // Functions
 //----------------------------------------
 
+// Applies random numbers
 var getRandom = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Starts and restarts the game
 var startGame = function() {
 
     // Reset the Current Score
-    var currentScore = 0;
+    currentScore = 0;
 
     // Set a new Target Score (between 19 and 120)
     targetScore = getRandom (19, 120);
@@ -49,29 +51,89 @@ var startGame = function() {
     // Set different values for each of the crystals (between 1 and 12)
     crystal.blue.value = getRandom(1, 12);
     crystal.green.value = getRandom(1, 12);
-    crystal.red.value = getRandom(1, 12);
+    crystal.pink.value = getRandom(1, 12);
     crystal.yellow.value = getRandom(1, 12);
 
     // Change the HTML to reflect all of these changes
+    $("#yourScore").html(currentScore);
+    $("#targetScore").html(targetScore);
 
     // Testing Console
     console.log("------------------------------")
     console.log("Target Score: " + targetScore);
-    console.log("Blue: " + crystal.blue.value + " | Green: " + crystal.green.value + " | Red " + crystal.red.value + " | Yellow " + crystal.yellow.value + ")
+    console.log("Blue: " + crystal.blue.value + " | Green: " + crystal.green.value + " | Pink " + crystal.pink.value + " | Yellow " + crystal.yellow.value);
     console.log("------------------------------")
+}
+
+// Respond to clicks on crystals
+var addValues = function(crystal) {
+
+    // Change currentScore
+    currentScore = currentScore + crystal.value;
+
+    // Change HTML to reflect changes in currentScore
+    $("#yourScore").html(currentScore);
+
+    // Call the checkWin function
+    checkWin();
+
+    // Testing console
+    console.log("Your Score: " + currentScore);
+
+}
+
+// Check if user won or lost and reset the game
+var checkWin = function() {
+
+    // Check if currentScore is larger then targetScore
+    if(currentScore > targetScore) {
+        alert("sorry. You lost!");
+        console.log("You lost")
+
+        // Add to loss counter
+        lossCount++;
+
+        // Change loss count
+        $("#lossCount").html(lossCount);
+
+        // Restart game
+        startGame();
+    }
+
+    else if (currentScore == targetScore) {
+        alert("Congrats! You Won!");
+        console.log("You Won!");
+
+        // Add to win count
+        winCount++;
+
+        // Add to win counter
+        $("#winCount").html(winCount);
+
+        // Restart game
+        startGame();
+    }
+
+
+
 }
 
 // Main Process
 //----------------------------------------
+
+// Starts game
+startGame();
+
 $("#blue").click(function() {
-    alert("test");
+    addValues(crystal.blue);
 });
+
 $("#green").click(function() {
-    alert("test");
+    addValues(crystal.green);
 });
-$("#red").click(function() {
-    alert("test");
+$("#pink").click(function() {
+    addValues(crystal.pink);
 });
 $("#yellow").click(function() {
-    alert("test");
+    addValues(crystal.yellow);
 });

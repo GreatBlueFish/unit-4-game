@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-position: center;
+    background-size: cover;
+    height: 950px;
+    padding: 40px;
+}
+footer {
+    background: rgba(77, 114, 233, 0.527);
+    color: #fff;
+    padding: 30px 0;
+    clear: both;
+    border-top: 8px solid rgba(38, 70, 209, 0.486);
+    color: #f7eaea;
+    font-size: 12px;
+    text-align: center; 
+    position: absolute;
+    bottom: -226px;
+    width: 100%;
+    left: 0;
+}
+img {
+    width: 100px;
+}
