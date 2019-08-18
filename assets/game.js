@@ -137,3 +137,4 @@ $("#pink").click(function() {
 $("#yellow").click(function() {
     addValues(crystal.yellow);
 });
+
